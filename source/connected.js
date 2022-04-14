@@ -1,6 +1,7 @@
 function connected() 
 {
-  let h = setInterval(() => {
+  let h = setInterval(() => 
+  {
     if (!!window.DEVHOOK_CONNECTED_SKIN)
     {
       window.DEVHOOK_CONNECTED_SKIN()

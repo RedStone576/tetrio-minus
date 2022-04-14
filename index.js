@@ -10,4 +10,5 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   injectScript(chrome.extension.getURL('/source/connected.js'), 'body')
+  injectScript(chrome.extension.getURL('/source/map.js'),     'body')
 })

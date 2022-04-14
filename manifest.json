@@ -10,13 +10,16 @@
       "run_at": "document_start"
     }
   ],
-  "web_accessible_resources" : ["/source/connected.js"],
+  "web_accessible_resources" : [
+    "/source/connected.js",
+    "/source/map.js"
+  ],
   "permissions": [
     "*://tetr.io/*",
     "tabs",
     "storage"
   ],
   "icons": {
-    "128": "res/128.png"
+    "128": "res/external/128.png"
   }
 }
