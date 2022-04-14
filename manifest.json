@@ -1,0 +1,22 @@
+{
+  "name": "TETRIO MINUS",
+  "description": "heueueue",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["https://tetr.io/*"],
+      "js": ["index.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources" : ["/source/connected.js"],
+  "permissions": [
+    "*://tetr.io/*",
+    "tabs",
+    "storage"
+  ],
+  "icons": {
+    "128": "res/128.png"
+  }
+}

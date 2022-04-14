@@ -1,0 +1,20 @@
+{
+  "mino": 
+  {
+    "normal": "h",
+    "normal_ghost": "h",
+    "connected": "h",
+    "connected_ghost": "h"
+  },
+
+  "board": 
+  {
+    "queue": "h",
+    "board": "h"
+  },
+
+  "etc":
+  {
+    "customMap": false
+  }
+}
