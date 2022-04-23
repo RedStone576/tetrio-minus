@@ -11,11 +11,22 @@
     }
   ],
   "web_accessible_resources" : [
+    "config.json",
+
     "/source/connected.js",
-    "/source/map.js"
+    "/source/map.js",
+    "/source/redirect.js",
+
+    "/res/user/sss.png",
+    "/res/user/skin.connected.mino.png",
+    "/res/user/skin.connected.ghost.png",
+    "/res/user/skin.board.png"
   ],
+  "background": {"scripts":["background.js"]},
   "permissions": [
     "*://tetr.io/*",
+    "webRequest",
+    "webRequestBlocking",
     "tabs",
     "storage"
   ],
