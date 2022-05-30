@@ -11,6 +11,13 @@
                                                           \|_________|
 ```
 
-## TODO:
->- [ ] custom color scheme 
->- [ ] custom board and mino skin, duh
+## How To Install:
+- download the source
+- go to `chrome://extensions` or `brave://` `edge://` idk
+- enable dev mode
+- click load unpacked and select the extension file
+- tada
+
+## Other Extensions ~~istealsomecodefrom~~ That You Should Try:
+[Sup3rFire/TETR.IO Logs](https://github.com/Sup3rFire/TETR.IO-Logs)  
+[ZudoB/emotes-extension](https://github.com/ZudoB/emotes-extension)
