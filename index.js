@@ -1,9 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => 
 {
-  fetch(chrome.runtime.getURL("config.json")).then(x => x.json()).then(config => 
+  chrome.storage.local.get(null, ({ config }) =>
   {
-    !config.skin_connected ? void 0 : injectScript(chrome.extension.getURL("/source/connected.js"), "body")
-    !config.custom_map     ? void 0 : injectScript(chrome.extension.getURL("/source/map.js"),       "body")
+    !config["connected-skin"] || injectScript(chrome.extension.getURL("/source/connected.js"), "body")
+    !config["custom-map"]     || injectScript(chrome.extension.getURL("/source/map.js"),       "body")
   })
 })
 
