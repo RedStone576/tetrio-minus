@@ -27,8 +27,9 @@ function toggle(x)
       
       chrome.storage.local.get("config", (h) => 
       {
+        if (!h.config) h.config = {}
+        
         h.config[x] = false
-      
         chrome.storage.local.set({ config: h.config })
       })
     }
@@ -41,9 +42,10 @@ function toggle(x)
       console.log(`enabled ${x}`)
       
       chrome.storage.local.get("config", (h) => 
-      {
-        h.config[x] = true
-      
+      {  
+        if (!h.config) h.config = {}
+        
+        h.config[x] = true 
         chrome.storage.local.set({ config: h.config })
       })
     }
