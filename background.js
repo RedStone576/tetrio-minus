@@ -7,6 +7,18 @@ chrome.webRequest.onBeforeRequest.addListener(x =>
 ,{ urls: ["https://tetr.io/js/tetrio.js*"] }
 ,["blocking"])
 
+chrome.runtime.onMessage.addListener(x => 
+{
+  if (x.i === "urmom")
+  {
+    load()
+  }
+})
+
+load()
+
+chrome.webRequest.onBeforeRequest.addListener(() => { return { cancel: true}}, {urls: ["https://tetr.io/res/skins/board/generic/queue.png"]}, ["blocking"])
+
 function redirect(x, y)
 {
   chrome.webRequest.onBeforeRequest.addListener(() => 
@@ -17,15 +29,18 @@ function redirect(x, y)
   ,["blocking"])
 }
 
-fetch(chrome.runtime.getURL("config.json")).then(x => x.json()).then(config =>
+function load()
 {
-  chrome.storage.local.get(null, (x) =>
+  fetch(chrome.runtime.getURL("config.json"))
+  .then(x => x.json())
+  .then(config =>
   {
-    for (const h of config.things)
+    chrome.storage.local.get(null, (x) =>
     {
-      if (x[h.name]) redirect(x[h.name], h.url)
-    }
+      for (const h of config.things)
+      {
+        if (x[h.name]) redirect(x[h.name], h.url)
+      }
+    })
   })
-})
-
-chrome.webRequest.onBeforeRequest.addListener(() => { return { cancel: true}}, {urls: ["https://tetr.io/res/skins/board/generic/queue.png"]}, ["blocking"])
+}

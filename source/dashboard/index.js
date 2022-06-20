@@ -7,8 +7,10 @@ function setData(x)
   {
     reader.readAsDataURL(z.target.files[0])
     reader.onload = () => chrome.storage.local.set({ [x]: reader.result })
-    
-    window.location.reload()
+    chrome.runtime.sendMessage({ i: "urmom" }, () => 
+    {
+      setTimeout(() => window.location.reload(), 1000)
+    })
   })
 }
 
