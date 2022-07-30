@@ -36,20 +36,12 @@
   "config": 
   [
     {
-      "name"  : "custom-skin",
-      "title" : "custom skin"
-    },
-    {
       "name"  : "connected-skin",
       "title" : "connected skin"
     },
     {
       "name"  : "custom-map",
       "title" : "enable custom map"
-    },
-    {
-      "name"  : "role-color",
-      "title" : "role based card*"
     }
   ]
 }

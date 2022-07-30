@@ -1,27 +1,26 @@
 {
-  "name": "TETRIO MINUS",
-  "description": "heueueue",
-  "version": "1.0.0",
-  "manifest_version": 2,
+  "name"             : "TETRIO MINUS",
+  "description"      : "heueueue",
+  "version"          : "1.0.1",
+  "manifest_version" : 2,
+  "options_page"     : "source/page/dashboard.html",
+  "icons"            : { "128"          : "res/external/128.png" },
+  "background"       : { "scripts"      : ["source/background.js"] },
+  "browser_action"   : { "default_icon" : { "128": "res/external/128.png" }},
+  
   "content_scripts":
+  [{
+    "matches" : ["https://tetr.io/*"],
+    "js"      : ["source/index.js"],
+    "run_at"  : "document_start"
+  }],
+  
+  "web_accessible_resources":
   [
-    {
-      "matches": ["https://tetr.io/*"],
-      "js": ["index.js"],
-      "run_at": "document_start"
-    }
+    "source/**/*.js",
+    "config.json"
   ],
-  "web_accessible_resources" :
-  [
-    "*.js",
-    "config.json",
-    "/source/*.js",
-    "/res/user/*.png"
-  ],
-  "background":
-  {
-    "scripts":["background.js"]
-  },
+  
   "permissions":
   [
     "*://tetr.io/*",
@@ -30,17 +29,5 @@
     "tabs",
     "storage",
     "unlimitedStorage"
-  ],
-  "icons":
-  {
-    "128": "res/external/128.png"
-  },
-  "browser_action":
-  {
-    "default_icon":
-    {
-      "128": "res/external/128.png"
-    }
-  },
-  "options_page": "source/dashboard/dashboard.html"
+  ]
 }
