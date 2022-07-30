@@ -122,7 +122,7 @@ fetch(chrome.runtime.getURL("config.json"))
       
       chrome.storage.local.get("config", (x) => 
       {  
-        if (!x.config) h.config = {}
+        if (!x.config) x.config = {}
         
         x.config["connected-skin"] = true 
         chrome.storage.local.set({ config: x.config })
