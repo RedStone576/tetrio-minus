@@ -18,6 +18,7 @@
   "web_accessible_resources":
   [
     "source/**/*.js",
+    "res/internal/*.png",
     "config.json"
   ],
   

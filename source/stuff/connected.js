@@ -1,13 +1,13 @@
-function connected() 
+let connectedAtt = 0
+let connectedInt = setInterval(() => 
 {
-  let h = setInterval(() => 
-  {
-    if (!!window.DEVHOOK_CONNECTED_SKIN)
-    {
-      window.DEVHOOK_CONNECTED_SKIN()
-      clearInterval(h)
-    }
-  }, 1000)
-} 
+  connectedAtt++
+  
+  if (connectedAtt > 15) return clearInterval(connectedInt)
 
-connected()
+  if (!!window.DEVHOOK_CONNECTED_SKIN)
+  {
+    window.DEVHOOK_CONNECTED_SKIN()
+    clearInterval(connectedInt)
+  }
+}, 1000)

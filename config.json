@@ -42,6 +42,14 @@
     {
       "name"  : "custom-map",
       "title" : "enable custom map"
+    },
+    {
+      "name"  : "skip-login",
+      "title" : "skip login"
+    },
+    {
+      "name"  : "bongocat",
+      "title" : "ebic keypress thingy"
     }
   ]
 }

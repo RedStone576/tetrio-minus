@@ -1,6 +1,6 @@
 load()
 
-chrome.browserAction.onClicked.addListener(() => chrome.tabs.create({ url: chrome.extension.getURL("source/page/dashboard.html") }))
+chrome.browserAction.onClicked.addListener(() => chrome.tabs.create({ url: chrome.runtime.getURL("source/page/dashboard.html") }))
 chrome.runtime.onMessage.addListener((x, y, z) => 
 { 
   if (x.i === "urmom") 
