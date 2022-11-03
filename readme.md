@@ -18,6 +18,13 @@
 - click load unpacked and select the extension file
 - tada
 
+<details>
+<summary>Tutorial Video</summary>
+its low effort tho.
+<br>
+https://www.youtube.com/watch?v=kRyw_4LxJh8
+</details>
+
 ## Other Extensions ~~istealsomecodefrom~~ That You Should Try:
 [Sup3rFire/TETR.IO Logs](https://github.com/Sup3rFire/TETR.IO-Logs)  
 [ZudoB/emotes-extension](https://github.com/ZudoB/emotes-extension)
