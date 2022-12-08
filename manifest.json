@@ -4,6 +4,10 @@
     "version": "2.0.0",
     "manifest_version": 3,
     "author": "RedStone576",
+    
+    "background": {
+        "service_worker": "src/background.js"
+    },
 
     "content_scripts": [{
         "matches": ["https://tetr.io/*"],
@@ -21,8 +25,8 @@
   
     "host_permissions": ["*://tetr.io/*"],
     "permissions": [
-        "webRequest",
-        "webRequestBlocking",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
         "storage",
         "unlimitedStorage"
     ]

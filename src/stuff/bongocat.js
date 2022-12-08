@@ -116,7 +116,7 @@
   }
   
   const element   = document.getElementById("bongoContainer")
-  const cordinate = localStorage.getItem("bongoCordinate")?.split(",") ?? [0, 0]
+  const cordinate = localStorage.getItem("tm:catCordinate")?.split(",") ?? [0, 0]
   
   element.style.width = "25%"
   element.style.left  = `${cordinate[0]}px`
@@ -153,7 +153,7 @@
       document.onmouseup   = null
       document.onmousemove = null
       
-      localStorage.setItem("bongoCordinate", `${element.offsetLeft},${element.offsetTop}`)
+      localStorage.setItem("tm:catCordinate", `${element.offsetLeft},${element.offsetTop}`)
     }
     
     document.onmousemove = (e) =>
