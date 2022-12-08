@@ -1,34 +1,29 @@
 {
-  "name"             : "TETRIO MINUS",
-  "description"      : "heueueue",
-  "version"          : "1.0.1",
-  "manifest_version" : 2,
-  "options_page"     : "source/page/dashboard.html",
-  "icons"            : { "128"          : "res/external/128.png" },
-  "background"       : { "scripts"      : ["source/background.js"] },
-  "browser_action"   : { "default_icon" : { "128": "res/external/128.png" }},
+    "name": "teto-minus",
+    "description": "aeaeaeae",
+    "version": "2.0.0",
+    "manifest_version": 3,
+    "author": "RedStone576",
+
+    "content_scripts": [{
+        "matches": ["https://tetr.io/*"],
+        "js": ["./src/index.js"],
+        "run_at": "document_start"
+    }],
   
-  "content_scripts":
-  [{
-    "matches" : ["https://tetr.io/*"],
-    "js"      : ["source/index.js"],
-    "run_at"  : "document_start"
-  }],
+    "web_accessible_resources": [{
+        "matches": ["https://tetr.io/*"],
+        "resources": [
+            "/src/**/*.js",
+            "/res/**/*"
+        ]
+    }],
   
-  "web_accessible_resources":
-  [
-    "source/**/*.js",
-    "res/internal/*.png",
-    "config.json"
-  ],
-  
-  "permissions":
-  [
-    "*://tetr.io/*",
-    "webRequest",
-    "webRequestBlocking",
-    "tabs",
-    "storage",
-    "unlimitedStorage"
-  ]
+    "host_permissions": ["*://tetr.io/*"],
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "storage",
+        "unlimitedStorage"
+    ]
 }
