@@ -19,6 +19,7 @@
         "matches": ["https://tetr.io/*"],
         "resources": [
             "/src/**/*.js",
+            "/src/pages/editor/*",
             "/res/**/*"
         ]
     }],

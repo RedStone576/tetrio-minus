@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", () =>
   chrome.storage.local.get(null, ({ config }) =>
   {
     inject(false, "head", "/src/stuff/connected.js")
-    inject(false, "head", "/src/stuff/map.js")
+    inject(true, "head", "/src/stuff/map.js", { id: chrome.runtime.id })
     inject(false, "head", "/src/stuff/bongocat.js", { id: chrome.runtime.id })
   })
 })
