@@ -4,9 +4,9 @@ window.addEventListener("DOMContentLoaded", () =>
   
   chrome.storage.local.get(null, ({ config }) =>
   {
-    inject(false, "head", "/src/stuff/connected.js")
-    inject(true, "head", "/src/stuff/map.js", { id: chrome.runtime.id })
-    inject(false, "head", "/src/stuff/bongocat.js", { id: chrome.runtime.id })
+    inject(config["connected-skin"], "head", "/src/stuff/connected.js")
+    inject(config["custom-map"],     "head", "/src/stuff/map.js",      { id: chrome.runtime.id })
+    inject(config["bongocat"],       "head", "/src/stuff/bongocat.js", { id: chrome.runtime.id })
   })
 })
 

@@ -5,6 +5,12 @@
     "manifest_version": 3,
     "author": "RedStone576",
     
+    "action": { 
+        "default_icon" : { 
+            "128": "res/default/128.png" 
+        }
+    },
+    
     "background": {
         "service_worker": "src/background.js"
     },
@@ -18,6 +24,7 @@
     "web_accessible_resources": [{
         "matches": ["https://tetr.io/*"],
         "resources": [
+            "/src/config.json",
             "/src/**/*.js",
             "/src/pages/editor/*",
             "/res/**/*"
@@ -26,6 +33,7 @@
   
     "host_permissions": ["*://tetr.io/*"],
     "permissions": [
+        "tabs",
         "declarativeNetRequest",
         "declarativeNetRequestFeedback",
         "storage",
