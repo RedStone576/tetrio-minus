@@ -2,9 +2,12 @@ window.addEventListener("DOMContentLoaded", () =>
 {
   if (window.location.pathname !== "/") return
   
+  chrome.runtime.sendMessage({ i: "init:load" })
+  
   chrome.storage.local.get(null, ({ config }) =>
   {
     inject(config["connected-skin"], "head", "/src/stuff/connected.js")
+    inject(config["card"],           "head", "/src/stuff/card.js")
     inject(config["custom-map"],     "head", "/src/stuff/map.js",      { id: chrome.runtime.id })
     inject(config["bongocat"],       "head", "/src/stuff/bongocat.js", { id: chrome.runtime.id })
   })

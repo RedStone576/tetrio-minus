@@ -2,17 +2,8 @@ chrome.action.onClicked.addListener(() => chrome.tabs.create({ url: chrome.runti
 
 chrome.runtime.onMessage.addListener((req, send, res) => 
 { 
-  console.log(req)
-
-  if (req.i === "config:reload")
-  {
-    load()
-    
-    chrome.runtime.sendMessage({ i: "config:reloaded" })
-  }
+  if (req.i === "init:load") load()
 })
-
-load()
 
 chrome.declarativeNetRequest.updateDynamicRules({
   addRules: [{
@@ -60,7 +51,7 @@ function load()
   {
     chrome.storage.local.get(null, (x) =>
     {
-      for (const h of config.things)
+      for (const h of config.overwrite)
       {
         chrome.declarativeNetRequest.updateDynamicRules({
           removeRuleIds: [h.id + 1]

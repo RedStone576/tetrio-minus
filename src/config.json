@@ -1,5 +1,5 @@
 {
-  "things": 
+  "overwrite": 
   [
     {
       "name"  : "skin-mino",
@@ -50,6 +50,10 @@
     {
       "name"  : "bongocat",
       "title" : "cat"
+    },
+    {
+      "name"  : "card",
+      "title" : "card"
     }
   ]
 }

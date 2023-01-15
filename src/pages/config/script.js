@@ -12,7 +12,7 @@ const template = (x, y, z) =>
 </div>`
 
 render()
-function render()
+function render(pos = 0)
 {
   fetch(chrome.runtime.getURL("src/config.json"))
   .then(x => x.json())
@@ -27,7 +27,7 @@ function render()
         $("config").innerHTML += `<div id="toggle-${h.name}" class="${x?.config?.[h.name] ? "checkmark" : "notCheckmark"}">${h.title.toUpperCase()}</div>`
       }
     
-      for (const h of config.things)
+      for (const h of config.overwrite)
       { 
         if ($(`card-${h.name}`)) $(`card-${h.name}`).remove()
       
@@ -39,7 +39,7 @@ function render()
         toggle(h.name)
       }
       
-      for (const h of config.things) 
+      for (const h of config.overwrite) 
       { 
         click(h.name) 
         setData(h.name)
@@ -59,14 +59,7 @@ function render()
           chrome.storage.local.set({ config: x.config })
         })
         
-        chrome.runtime.sendMessage({ i: "config:reload" })
-            
-        chrome.runtime.onMessage.addListener((req, send, res) => 
-        { 
-          console.log(req)
-        
-          if (req.i === "config:reloaded") render()
-        })
+        render()
       })
       
       $("export").addEventListener("click", () => 
@@ -106,19 +99,14 @@ function render()
               else chrome.storage.local.set({ [z]: json[z] })
             }
             
-            chrome.runtime.sendMessage({ i: "config:reload" })
-            
-            chrome.runtime.onMessage.addListener((req, send, res) => 
-            { 
-              console.log(req)
-            
-              if (req.i === "config:reloaded") render()
-            })
+            render()
           }
         })
       })
     })
   })
+  
+  window.scrollTo(0, pos)
 }
 
 function toggle(x)
@@ -168,16 +156,12 @@ function setData(x)
     const reader = new FileReader()
   
     reader.readAsDataURL(z.target.files[0])
-    reader.onload = () => chrome.storage.local.set({ [x]: reader.result })
+    reader.onload = () => 
+    {
+      chrome.storage.local.set({ [x]: reader.result })
     
-    chrome.runtime.sendMessage({ i: "config:reload" })
-    
-    chrome.runtime.onMessage.addListener((req, send, res) => 
-    { 
-      console.log(req)
-    
-      if (req.i === "config:reloaded") render()
-    })
+      render(window.scrollY)
+    }
   })
 }
 
@@ -186,14 +170,8 @@ function resetData(x)
   $(`reset-${x}`).addEventListener("click", () =>
   {
     chrome.storage.local.remove(x)
-    chrome.runtime.sendMessage({ i: "config:reload" })
   
-    chrome.runtime.onMessage.addListener((req, send, res) => 
-    { 
-      console.log(req)
-    
-      if (req.i === "config:reloaded") render()
-    })
+    render(window.scrollY)
   })
 }
 
