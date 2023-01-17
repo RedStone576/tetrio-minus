@@ -12,8 +12,10 @@
     \|__|\|__|\|__|     \|__|\|_______|\|_______|\|_______|\_________\
                                                           \|_________|
 ```
+due to me being sloth and having no idea what im doing you might want to resize the connected skin image to 1024x1024 or what ever
 
 ## How To Install:
+
 - download the source
 - go to `chrome://extensions` or `brave://` `edge://` idk
 - enable dev mode

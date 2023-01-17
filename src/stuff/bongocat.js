@@ -1,4 +1,6 @@
 {
+  const id = new URLSearchParams(document.currentScript.src.split("?")[1]).get("id")
+
   const bongoContainer = document.createElement("div")
   const css            = document.createElement("style")
   
@@ -20,19 +22,19 @@
   }
   
   .cat1 {
-    background-image: url('${_bongocat[1]}');
+    background-image: url('chrome-extension://${id}/res/internal/cat1.png');
   }
   
   .cat2 {
-    background-image: url('${_bongocat[2]}');
+    background-image: url('chrome-extension://${id}/res/internal/cat2.png');
   }
   
   .cat3 {
-    background-image: url('${_bongocat[3]}');
+    background-image: url('chrome-extension://${id}/res/internal/cat3.png');
   }
   
   .cat4 {
-    background-image: url('${_bongocat[4]}');
+    background-image: url('chrome-extension://${id}/res/internal/cat4.png');
   }
   
   .ns {
@@ -114,7 +116,7 @@
   }
   
   const element   = document.getElementById("bongoContainer")
-  const cordinate = localStorage.getItem("bongoCordinate")?.split(",") ?? [0, 0]
+  const cordinate = localStorage.getItem("tm:catCordinate")?.split(",") ?? [0, 0]
   
   element.style.width = "25%"
   element.style.left  = `${cordinate[0]}px`
@@ -151,7 +153,7 @@
       document.onmouseup   = null
       document.onmousemove = null
       
-      localStorage.setItem("bongoCordinate", `${element.offsetLeft},${element.offsetTop}`)
+      localStorage.setItem("tm:catCordinate", `${element.offsetLeft},${element.offsetTop}`)
     }
     
     document.onmousemove = (e) =>

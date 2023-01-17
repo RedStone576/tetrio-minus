@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Map Editor</title>
+        
+        <link rel="stylesheet" href="./style.css">
+        <script defer src="./script.js"></script>
+        <link rel="icon" type="image/x-icon" href="../../../res/default/128.png">
+    </head>
+    
+    <body>
+        <center id="init">
+            <div style="position:relative; margin-top: 10%; border-radius: 5px; text-align: left; width: 30%; padding: 2%; background-color: #181c27; border-top: 3px solid #283145; border-left: 3px solid #232936; border-bottom: 3px solid #0f1117; border-right: 3px solid #151922; box-shadow: 0 0 8px #000;">
+                <h1 style="font-family: HUN; color: #657497; font-size: 1.25em; margin: 0; margin-bottom: 0.15em;">SET SIZE</h1>
+                
+                <div id="idn" style="position: absolute; right: 0.75em; top: 0.6em;">
+                    <div style="font-family: HUN; font-size: 75%; background-color: #22293b; color: #7f9ddf; border-radius: 3px; text-align: center; padding: 0.2em; padding-bottom: 0; font-size: 1.5em; transition: 0.5s filter; cursor: pointer; float: left; margin-left: 15px; border-top: 3px solid #33405c; border-left: 3px solid #2d364b; border-bottom: 3px solid #1b1f28; border-right: 3px solid #1e232d;">
+                        OK
+                    </div>
+                </div>
+                
+                <br>
+                
+                <input id="width" value="10" placeholder="width" type="number" style="width: 18%; font-family: HUN; font-size: 110%; background-color: #060606AA; border-top: 3px solid #0008; border-left: 3px solid #0006; border-bottom: 3px solid #2228; border-right: 3px solid #1116; resize: none; overflow: auto; outline: none; box-shadow: none;"></input>
+                <span style="font-family: HUN; color: #657497; font-size: 1.50em; margin: 0; margin-bottom: 0.15em;">*</span>
+                <input id="height" value="40" placeholder="height" type="number" style="width: 18%; max-height: 10%; font-family: HUN; font-size: 110%; background-color: #060606AA; border-top: 3px solid #0008; border-left: 3px solid #0006; border-bottom: 3px solid #2228; border-right: 3px solid #1116; resize: none; overflow: auto; outline: none; box-shadow: none;"></input>
+            </div>
+        </center>
+    
+        <div class="main" style="display: none;" id="main">
+            <div class="side-container">
+                <div class="picker-container">
+                    <div class="picker">
+                        <div style="background: var(--block-z)" id="picker-z"></div>
+                        <div style="background: var(--block-l)" id="picker-l"></div>
+                        <div style="background: var(--block-o)" id="picker-o"></div>
+                        <div style="background: var(--block-s)" id="picker-s"></div>
+                        <div style="background: var(--block-i)" id="picker-i"></div>
+                        <div style="background: var(--block-j)" id="picker-j"></div>
+                        <div style="background: var(--block-t)" id="picker-t"></div>
+                        <div style="background: var(--block-g)" id="picker-g"></div>
+                        <div style="background: var(--block-d)" id="picker-d"></div>
+                        <div style="background: var(--block-e)" id="picker-e"></div>
+                    </div>
+                </div>
+                
+                <div class="queue-container">
+                    <textarea placeholder="queue..." id="queue"></textarea>
+                </div>
+                
+                <div class="map-container">
+                    <textarea placeholder="map string..." id="map"></textarea>
+                </div>
+            </div>
+            
+            <div class="board-container">
+                <div class="board"></div>
+            </div>
+        </div>
+    </body>
+</html>

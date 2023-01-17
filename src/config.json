@@ -1,5 +1,5 @@
 {
-  "things": 
+  "overwrite": 
   [
     {
       "name"  : "skin-mino",
@@ -44,12 +44,12 @@
       "title" : "enable custom map"
     },
     {
-      "name"  : "skip-login",
-      "title" : "skip login"
+      "name"  : "bongocat",
+      "title" : "cat"
     },
     {
-      "name"  : "bongocat",
-      "title" : "ebic keypress thingy"
+      "name"  : "card",
+      "title" : "card"
     }
   ]
 }

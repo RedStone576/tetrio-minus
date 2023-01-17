@@ -1,0 +1,126 @@
+{
+  const h = Object.freeze({
+    anon: 
+     `background-color: #262626;
+      border-top: 3px solid #2a2a2a;
+      border-right: 3px solid #222;
+      border-bottom: 3px solid #131313;`,
+    supporter:
+     `background-color: #582929;
+      border-top: 3px solid #6b2b2b;
+      border-right: 3px solid #3e1c1c;
+      border-bottom: 3px solid #2e1616;`,
+    verified:
+     `background-color: #582957;
+      border-top: 3px solid #6b2b69;
+      border-right: 3px solid #331933;
+      border-bottom: 3px solid #2e162e;`,
+    mod:
+     `background-color: #1e2a48 !important;
+      border-top: 3px solid #1d3164 !important;
+      border-right: 3px solid #1c263e !important;
+      border-bottom: 3px solid #0e0f13 !important;`,
+    admin:
+     `background-color: #41502a !important;
+      border-top: 3px solid #526934 !important;
+      border-right: 3px solid #232919 !important;
+      border-bottom: 3px solid #0e0f13 !important;`
+  })
+  
+  const css = document.createElement("style")
+  
+  css.textContent =
+  `
+    .scroller_player:has(.scroller_player_badgelist > .panon):not(.spectator) {
+      ${h.anon}
+    }
+    
+    .scroller_player:has(.scroller_player_badgelist > .panon):not(.spectator) > .scroller_player_badgelist > .precord,
+    .scroller_player:has(.scroller_player_badgelist > .panon):not(.spectator) > h1 {
+      color: #c4c3c3;
+    }
+    
+    .scroller_player:has(.scroller_player_badgelist > .panon):not(.spectator) > .scroller_player_badgelist > .pstreak {
+      background-color: #c4c3c3;
+      box-shadow: #c4c3c3;
+    }   
+   
+    .scroller_player[data-supporter="yes"]:not(.spectator) {
+      ${h.supporter}
+    }
+    
+    .scroller_player[data-supporter="yes"]:not(.spectator) > .scroller_player_badgelist > .precord ,
+    .scroller_player[data-supporter="yes"]:not(.spectator) > h1 {
+      color: #f3bebe;
+    }
+
+    .scroller_player[data-supporter="yes"]:not(.spectator) > .scroller_player_badgelist > .pstreak {
+      background-color: #f3bebe;
+      box-shadow: #f3bebe;
+    }   
+        
+    .scroller_player[data-id="6031fedbaa921e2fb0c7153b"]:not(.spectator),
+    .scroller_player:has(.scroller_player_badgelist > .pbot):not(.spectator),
+    .scroller_player:has(> h1 > img[src="/res/verified.png"]):not(.spectator) {
+      ${h.verified}
+    }
+    
+    .scroller_player[data-id="6031fedbaa921e2fb0c7153b"]:not(.spectator) > .scroller_player_badgelist > .precord,
+    .scroller_player:has(.scroller_player_badgelist > .pbot):not(.spectator) > .scroller_player_badgelist > .precord,
+    .scroller_player:has(> h1 > img[src="/res/verified.png"]):not(.spectator) > .scroller_player_badgelist > .precord,
+    .scroller_player[data-id="6031fedbaa921e2fb0c7153b"]:not(.spectator) > h1,
+    .scroller_player:has(.scroller_player_badgelist > .pbot):not(.spectator) > h1,
+    .scroller_player:has(> h1 > img[src="/res/verified.png"]):not(.spectator) > h1 {
+      color: #f3bee9;
+    }
+    
+    .scroller_player[data-id="6031fedbaa921e2fb0c7153b"]:not(.spectator) > .scroller_player_badgelist > .pstreak,
+    .scroller_player:has(.scroller_player_badgelist > .pbot):not(.spectator) > .scroller_player_badgelist > .pstreak,
+    .scroller_player:has(> h1 > img[src="/res/verified.png"]):not(.spectator) > .scroller_player_badgelist > .pstreak {
+      background-color: #f3bee9;
+      box-shadow: #f3bee9;
+    }
+    
+    .scroller_player:has(> h1 > img[src="/res/verified-mod.png"]):not(.spectator) {
+      ${h.mod}
+    }
+    
+    .scroller_player:has(> h1 > img[src="/res/verified-mod.png"]):not(.spectator) > .scroller_player_badgelist > .precord,
+    .scroller_player:has(> h1 > img[src="/res/verified-mod.png"]):not(.spectator) > h1 {
+      color: #bedff3
+    }
+    
+    .scroller_player:has(> h1 > img[src="/res/verified-mod.png"]):not(.spectator) > .scroller_player_badgelist > .pstreak {
+      background-color: #bedff3;
+      box-shadow: #bedff3;
+    }
+    
+    .scroller_player:has(> h1 > img[src="/res/verified-admin.png"]):not(.spectator) {
+      ${h.admin}
+    }
+    
+    .scroller_player:has(> h1 > img[src="/res/verified-admin.png"]):not(.spectator) > .scroller_player_badgelist > .precord,
+    .scroller_player:has(> h1 > img[src="/res/verified-admin.png"]):not(.spectator) > h1 {
+      color: #d3f3be
+    }
+    
+    .scroller_player:has(> h1 > img[src="/res/verified-admin.png"]):not(.spectator) > .scroller_player_badgelist > .pstreak {
+      background-color: #d3f3be;
+      box-shadow: #d3f3be;
+    }
+    
+    .scroller_player[data-id="6031fedbaa921e2fb0c7153b"] > h1::after {
+      content: " ";
+      height: 20px;
+      width: 20px;
+      background: url(/res/emotes/bigflush.png);
+      display: inline-block;
+      background-repeat: no-repeat;
+      position: absolute;
+      background-size: contain;
+      margin-left: 5px;
+    }
+  `
+    
+  document.body.append(css)
+}
