@@ -5,6 +5,10 @@
     "manifest_version": 3,
     "author": "RedStone576",
     
+    "icons": { 
+        "128": "res/default/128.png" 
+    },
+    
     "action": { 
         "default_icon" : { 
             "128": "res/default/128.png" 

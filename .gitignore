@@ -1,4 +1,4 @@
-node_modules/
-tsconfig.json
-test.js
-need.txt
+./node_modules/
+./tsconfig.json
+./test.js
+./need.txt

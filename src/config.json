@@ -1,55 +1,61 @@
 {
-  "overwrite": 
-  [
-    {
-      "name"  : "skin-mino",
-      "title" : "normal skin mino",
-      "url"   : "https://tetr.io/res/skins/minos/tetrio.png",
-      "id"    : 1
-    },
-    {
-      "name"  : "skin-ghost",
-      "title" : "normal skin ghost",
-      "url"   : "https://tetr.io/res/skins/ghost/tetrio.png",
-      "id"    : 2
-    },
-    {
-      "name"  : "skin-mino-connected",
-      "title" : "connected skin mino",
-      "url"   : "https://tetr.io/res/skins/minos/connected.png",
-      "id"    : 3
-    },
-    {
-      "name"  : "skin-ghost-connected",
-      "title" : "connected skin ghost",
-      "url"   : "https://tetr.io/res/skins/ghost/connected.png",
-      "id"    : 4
-    },
-    {
-      "name"  : "board-board",
-      "title" : "board",
-      "url"   : "https://tetr.io/res/skins/board/generic/board.png",
-      "id"    : 5
-    }
-  ],
-  
-  "config": 
-  [
-    {
-      "name"  : "connected-skin",
-      "title" : "connected skin"
-    },
-    {
-      "name"  : "custom-map",
-      "title" : "enable custom map"
-    },
-    {
-      "name"  : "bongocat",
-      "title" : "cat"
-    },
-    {
-      "name"  : "card",
-      "title" : "card"
-    }
-  ]
+    "overwrite": 
+    [
+        {
+            "name"  : "skin-mino",
+            "title" : "normal skin mino",
+            "url"   : "https://tetr.io/res/skins/minos/tetrio.png",
+            "id"    : 1
+        },
+        {
+            "name"  : "skin-ghost",
+            "title" : "normal skin ghost",
+            "url"   : "https://tetr.io/res/skins/ghost/tetrio.png",
+            "id"    : 2
+        },
+        {
+            "name"  : "skin-mino-connected",
+            "title" : "connected skin mino",
+            "url"   : "https://tetr.io/res/skins/minos/connected.png",
+            "id"    : 3
+        },
+        {
+            "name"  : "skin-ghost-connected",
+            "title" : "connected skin ghost",
+            "url"   : "https://tetr.io/res/skins/ghost/connected.png",
+            "id"    : 4
+        },
+        {
+            "name"  : "board-board",
+            "title" : "board",
+            "url"   : "https://tetr.io/res/skins/board/generic/board.png",
+            "id"    : 5
+        },
+        {
+            "name"  : "board-grid",
+            "title" : "grid",
+            "url"   : "https://tetr.io/res/skins/board/generic/grid.png",
+            "id"    : 6
+        }
+    ],
+    
+    "config": 
+    [
+        {
+            "name"  : "connected-skin",
+            "title" : "connected skin"
+        },
+        {
+            "name"  : "custom-map",
+            "title" : "enable custom map"
+        },
+        {
+            "name"  : "bongocat",
+            "title" : "cat"
+        },
+        {
+            "name"  : "card",
+            "title" : "card"
+        }
+    ]
 }

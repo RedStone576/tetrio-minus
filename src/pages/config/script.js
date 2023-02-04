@@ -48,17 +48,14 @@ function render(pos = 0)
       
       $("test").addEventListener("click", () => 
       {
-        chrome.storage.local.set({ "board-board": board_board })
-        chrome.storage.local.set({ "skin-mino-connected": skin_mino_connected })
-        
-        chrome.storage.local.get("config", (x) => 
-        {  
-          if (!x.config) x.config = {}
-          
-          x.config["connected-skin"] = true 
-          chrome.storage.local.set({ config: x.config })
-        })
-        
+        chrome.storage.local.clear()
+            
+        for (const z of Object.keys(__testdata))
+        {
+          if (z === "config") chrome.storage.local.set({ config: __testdata[z] })
+          else chrome.storage.local.set({ [z]: __testdata[z] })
+        }
+            
         render()
       })
       
