@@ -24,7 +24,7 @@ function render(pos = 0)
       {
         if ($(`toggle-${h.name}`)) $(`toggle-${h.name}`).remove()
         
-        $("config").innerHTML += `<div id="toggle-${h.name}" class="${x?.config?.[h.name] ? "checkmark" : "notCheckmark"}">${h.title.toUpperCase()}</div>`
+        $("config").innerHTML += `<div id="toggle-${h.name}" class="${x?.config?.[h.name] ? "checkmark" : "notCheckmark"}" title="${h.info}">${h.title.toUpperCase()}</div>`
       }
     
       for (const h of config.overwrite)

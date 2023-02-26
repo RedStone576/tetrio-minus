@@ -43,19 +43,27 @@
     [
         {
             "name"  : "connected-skin",
-            "title" : "connected skin"
+            "title" : "connected skin",
+            "info"  : "enable connected skin",
+            "path"  : "/js/connected.js"
         },
         {
             "name"  : "custom-map",
-            "title" : "enable custom map"
+            "title" : "custom map (editor included !!)",
+            "info"  : "add an additional field for map string on custom game option",
+            "path"  : "/js/map.js"
         },
         {
             "name"  : "bongocat",
-            "title" : "cat"
+            "title" : "bongocat*",
+            "info"  : "enable bongocat keypress osd *keyboard not included cuz lazy :p",
+            "path"  : "/js/bongocat.js"
         },
         {
             "name"  : "card",
-            "title" : "card"
+            "title" : "colored card*",
+            "info"  : "add colors on the user card thingy *lacking colors & tetra modal is not even colored !!",
+            "path"  : "/css/card.css"
         }
     ]
 }

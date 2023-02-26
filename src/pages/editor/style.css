@@ -106,16 +106,16 @@ body {
 div[id|=column] {
   height: 14px;
   width: 14px;
-  border: solid 1px #657497;
+  border: solid 1px #2c3342;
 }
 
-.tile-z { background: var(--block-z); border: solid 1px #90a0b5 !important; }
-.tile-s { background: var(--block-s); border: solid 1px #90a0b5 !important; }
-.tile-l { background: var(--block-l); border: solid 1px #90a0b5 !important; }
-.tile-o { background: var(--block-o); border: solid 1px #90a0b5 !important; }
-.tile-s { background: var(--block-s); border: solid 1px #90a0b5 !important; }
-.tile-i { background: var(--block-i); border: solid 1px #90a0b5 !important; }
-.tile-j { background: var(--block-j); border: solid 1px #90a0b5 !important; }
-.tile-t { background: var(--block-t); border: solid 1px #90a0b5 !important; }
-.tile-g { background: var(--block-g); border: solid 1px #90a0b5 !important; }
-.tile-d { background: var(--block-d); border: solid 1px #90a0b5 !important; }
+.tile-z { background: var(--block-z); border: solid 1px #CBD5E1 !important; }
+.tile-s { background: var(--block-s); border: solid 1px #CBD5E1 !important; }
+.tile-l { background: var(--block-l); border: solid 1px #CBD5E1 !important; }
+.tile-o { background: var(--block-o); border: solid 1px #CBD5E1 !important; }
+.tile-s { background: var(--block-s); border: solid 1px #CBD5E1 !important; }
+.tile-i { background: var(--block-i); border: solid 1px #CBD5E1 !important; }
+.tile-j { background: var(--block-j); border: solid 1px #CBD5E1 !important; }
+.tile-t { background: var(--block-t); border: solid 1px #CBD5E1 !important; }
+.tile-g { background: var(--block-g); border: solid 1px #CBD5E1 !important; }
+.tile-d { background: var(--block-d); border: solid 1px #CBD5E1 !important; }

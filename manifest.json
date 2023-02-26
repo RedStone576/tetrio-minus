@@ -30,6 +30,7 @@
         "resources": [
             "/src/config.json",
             "/src/**/*.js",
+            "/src/**/*.css",
             "/src/pages/editor/*",
             "/res/**/*"
         ]

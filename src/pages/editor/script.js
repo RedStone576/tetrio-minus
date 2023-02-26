@@ -98,10 +98,13 @@ function init()
     const { data } = e
     
     const filter = ["z", "l", "o", "s", "i", "j", "t", "#", "@", "_", "?"]
-  
+    
+    let c = $("#map").selectionStart
     let h = $("#map").value.split("?")
     let j = h[0].split("").filter(x => filter.indexOf(x.toLowerCase()) > -1).join("")
     let k = h.slice(1).join("?")
+  
+    if (j.length > (width * height)) j = j.slice(0, width * height)
     
     if (k.split("?").length > 2)
     {
@@ -116,11 +119,13 @@ function init()
     $("#queue").value = queueString
     $("#map").value   = mapString + (queueString ? "?" : "") + queueString
     
+    $("#map").setSelectionRange(c, c)
+    
     const mapArray = mapString.match(new RegExp(`.{1,${width}}`, "g"))
     
     if (!mapArray) 
     {
-      init()
+      //init()
     
       return
     }
@@ -142,7 +147,7 @@ function init()
 
 function shadow(x, y, r)
 {
-  if (draggin) return draw(x, y)
+  if (draggin) draw(x, y)
 
   const element = $(`#column-${y}-${x}`)
   
@@ -171,6 +176,8 @@ function draw(x, y, r)
   element.className = ""
   element.classList.add(`tile-${current}`)
   
+  if (mapString.length !== width * height) mapString += "_".repeat((width * height) - mapString.length)
+  
   const mapArray = mapString.match(new RegExp(`.{1,${width}}`, "g"))
   
   const c = current
@@ -192,6 +199,9 @@ $("#picker-s").addEventListener("click", () => setCurrent("s"))
 $("#picker-i").addEventListener("click", () => setCurrent("i"))
 $("#picker-j").addEventListener("click", () => setCurrent("j"))
 $("#picker-t").addEventListener("click", () => setCurrent("t"))
+$("#picker-g").addEventListener("click", () => setCurrent("g"))
+$("#picker-d").addEventListener("click", () => setCurrent("d"))
+$("#picker-e").addEventListener("click", () => setCurrent("e"))
 
 function setCurrent(p)
 {
