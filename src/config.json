@@ -36,6 +36,12 @@
             "title" : "grid",
             "url"   : "https://tetr.io/res/skins/board/generic/grid.png",
             "id"    : 6
+        },
+        {
+            "name"  : "board-queue",
+            "title" : "queue",
+            "url"   : "https://tetr.io/res/skins/board/generic/queue.png",
+            "id"    : 7
         }
     ],
     

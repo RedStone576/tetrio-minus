@@ -5,25 +5,11 @@ chrome.runtime.onMessage.addListener((req, send, res) =>
   if (req.i === "init:load") load()
 })
 
-chrome.declarativeNetRequest.updateDynamicRules({
-  addRules: [{
-    id: 1,
-    priority: 1,
-    action: { type: "block" },
-    condition: { 
-      urlFilter: "https://tetr.io/res/skins/board/generic/queue.png", 
-      domains: ["tetr.io"]
-    }
-  }],
-  
-  removeRuleIds: [1]
-})
-
 function redirect(red, url, id)
 {
   chrome.declarativeNetRequest.updateDynamicRules({
     addRules: [{
-      id: id + 1,
+      id: id,
       priority: 1,
       action: { 
         type: "redirect",
@@ -39,8 +25,8 @@ function redirect(red, url, id)
       }
     }],
     
-    removeRuleIds: [id + 1]
-  }, () => console.log(`rule ${id + 1} with url ${url}`))
+    removeRuleIds: [id]
+  }, () => console.log(`rule ${id} with url ${url}`))
 }
 
 function load()
