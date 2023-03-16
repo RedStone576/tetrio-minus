@@ -40,7 +40,7 @@ function load()
       for (const h of config.overwrite)
       {
         chrome.declarativeNetRequest.updateDynamicRules({
-          removeRuleIds: [h.id + 1]
+          removeRuleIds: [h.id]
         })
       
         if (x[h.name]) redirect(x[h.name], h.url, h.id)

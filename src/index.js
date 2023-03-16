@@ -12,13 +12,23 @@ window.addEventListener("DOMContentLoaded", () =>
     {
       for (const config of x.config)
       {
-        inject(storage[config.name], `/src/stuff${config.path}`, { id: chrome.runtime.id })
+        if (Array.isArray(config.path) && storage[config.name]) 
+        {
+          for (const x of config.path)
+          {
+            inject(true, `/src/stuff${x}`)
+          }
+        
+          continue
+        }
+      
+        inject(storage[config.name], `/src/stuff${config.path}`)
       }
     })
   })
 })
 
-function inject(condition, path, args)
+function inject(condition, path)
 {
   if (!condition) return
 
@@ -30,7 +40,7 @@ function inject(condition, path, args)
     const script = document.createElement("script")
     
     script.setAttribute("type", "text/javascript")
-    script.setAttribute("src", file + (!args ? "" : `?${new URLSearchParams(args)}`)) //whacky but eh
+    script.setAttribute("src", file + (!args ? "" : `?${new URLSearchParams({ id: chrome.runtime.id })}`)) //whacky but eh
   
     element.appendChild(script)
   }

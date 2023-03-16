@@ -1,0 +1,44 @@
+.scroller_player {
+  --hue: 122deg;
+
+  --bg: hsl(var(--hue) 31% 20%);
+  --bt: hsl(var(--hue) 31% 32%);
+  --br: hsl(var(--hue) 29% 22%);
+  --bm: hsl(var(--hue) 24% 11%);
+  --cl: hsl(var(--hue) 69% 85%);
+}
+
+.scroller_player:has(.lt_shape_0):not(.spectator) { --hue: 330deg; }
+.scroller_player:has(.lt_shape_1):not(.spectator) { --hue: 0deg; }
+.scroller_player:has(.lt_shape_2):not(.spectator) { --hue: 180deg; }
+.scroller_player:has(.lt_shape_3):not(.spectator) { --hue: 240deg; }
+.scroller_player:has(.lt_shape_4):not(.spectator) { --hue: 280deg; }
+
+.scroller_player:not(.spectator) {
+  background-color: var(--bg);
+  border-top: 3px solid var(--bt);
+  border-right: 3px solid var(--br);
+  border-bottom: 3px solid var(--bm);
+}
+
+.scroller_player:not(.spectator) > .scroller_player_badgelist > .precord,
+.scroller_player:not(.spectator) > h1 {
+  color: var(--cl);
+}
+
+.scroller_player:not(.spectator) > .scroller_player_badgelist > .pstreak {
+  background-color: var(--cl);
+  box-shadow: 0 0 8px var(--cl);
+}
+
+.scroller_player[data-id="6031fedbaa921e2fb0c7153b"] > h1::after {
+  content: " ";
+  height: 20px;
+  width: 20px;
+  background: url("https://tetr.io/res/emotes/bigflush.png");
+  display: inline-block;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: contain;
+  margin-left: 5px;
+}

@@ -66,10 +66,18 @@
             "path"  : "/js/bongocat.js"
         },
         {
-            "name"  : "card",
-            "title" : "colored card*",
-            "info"  : "add colors on the user card thingy *lacking colors & tetra modal is not even colored !!",
-            "path"  : "/css/card.css"
+            "name"  : "profile-level",
+            "title" : "colored profile",
+            "info"  : "add colors on the user card and modal based on a user's level",
+            "path"  : ["/css/profile-level-card.css", "/css/profile-level-modal.css"],
+            "clash" : "profile-role"
+        },
+        {
+            "name"  : "profile-role",
+            "title" : "!colored profile (role based)",
+            "info"  : "add colors on the user card and modal based on a user's role",
+            "path"  : ["/css/profile-role-card.css", "/css/profile-role-modal.css"],
+            "clash" : "profile-level"
         }
     ]
 }

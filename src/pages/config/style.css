@@ -3,6 +3,10 @@
 	font-family: HUN;
 }
 
+:root {
+	color-scheme: dark;
+}
+
 body {
 	background: #0e0f13;
 }
@@ -22,6 +26,10 @@ h2 {
 
 input {
 	display: none
+}
+
+p {
+	color: #454e68
 }
 
 .card {

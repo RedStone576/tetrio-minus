@@ -1,0 +1,11 @@
+.tetra_modal:has(.avatar[src^="/user-content/avatars/6031fedbaa921e2fb0c7153b"]) h2::after {
+  content: " ";
+  height: 30px;
+  width: 30px;
+  background: url("https://tetr.io/res/emotes/bigflush.png");
+  display: inline-block;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: contain;
+  margin-left: 5px;
+}

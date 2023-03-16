@@ -22,6 +22,7 @@ function render(pos = 0)
     {
       for (const h of config.config)
       {
+        if (h.title[0] === "!") continue
         if ($(`toggle-${h.name}`)) $(`toggle-${h.name}`).remove()
         
         $("config").innerHTML += `<div id="toggle-${h.name}" class="${x?.config?.[h.name] ? "checkmark" : "notCheckmark"}" title="${h.info}">${h.title.toUpperCase()}</div>`
@@ -36,11 +37,15 @@ function render(pos = 0)
       
       for (const h of config.config)
       {
-        toggle(h.name)
+        if (h.title[0] === "!") continue
+      
+        toggle(h.name, h.clash)
       }
       
       for (const h of config.overwrite) 
       { 
+        if (h.title[0] === "!") continue
+      
         click(h.name) 
         setData(h.name)
         resetData(h.name)
@@ -106,7 +111,7 @@ function render(pos = 0)
   window.scrollTo(0, pos)
 }
 
-function toggle(x)
+function toggle(x, clash)
 {
   $(`toggle-${x}`).addEventListener("click", () => 
   {
@@ -133,11 +138,21 @@ function toggle(x)
       list.remove("notCheckmark")
       list.add("checkmark")
       
-      console.log(`enabled ${x}`)
-      
       chrome.storage.local.get("config", (h) => 
       {  
         if (!h.config) h.config = {}
+        
+        console.log(!!clash && !!h.config[clash] ? `enabled ${x} and disables ${clash}` : `enabled ${x}`)
+        
+        if (!!clash && !!h.config[clash]) 
+        {
+          const cl = $(`toggle-${clash}`).classList
+          
+          cl.remove("checkmark")
+          cl.add("notCheckmark")
+          
+          h.config[clash] = false
+        }
         
         h.config[x] = true 
         chrome.storage.local.set({ config: h.config })
