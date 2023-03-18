@@ -40,7 +40,7 @@ function inject(condition, path)
     const script = document.createElement("script")
     
     script.setAttribute("type", "text/javascript")
-    script.setAttribute("src", file + (!args ? "" : `?${new URLSearchParams({ id: chrome.runtime.id })}`)) //whacky but eh
+    script.setAttribute("src", `${file}?${new URLSearchParams({ id: chrome.runtime.id })}`) //whacky but eh
   
     element.appendChild(script)
   }
