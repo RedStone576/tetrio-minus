@@ -1,3 +1,138 @@
+.tetra_modal {
+  --hue: 122deg;
+  --bd: 1;
+}
+
+.tetra_modal {
+  background-color: unset;
+  border-top: unset;
+  border-left: unset;
+  border-bottom: unset;
+  border-right: unset;
+}
+
+/* user */
+
+.tetra_modal:has(> h2) {
+  background-color: hsl(var(--hue) 25% 19%);
+  border-top: 3px solid hsl(var(--hue) 27% 37%);
+  border-left: 3px solid hsl(var(--hue) 23% 31%);
+  border-bottom: 3px solid hsl(var(--hue) 24% 11%);
+  border-right: 3px solid hsl(var(--hue) 27% 15%);
+}
+
+
+/* anon */
+
+.tetra_modal:has(.avatar[src="/res/avatar.png"]) {
+  background-color: hsl(var(--hue) 5% 19%);
+  border-top: 3px solid hsl(var(--hue) 7% 37%);
+  border-left: 3px solid hsl(var(--hue) 3% 31%);
+  border-bottom: 3px solid hsl(var(--hue) 4% 11%);
+  border-right: 3px solid hsl(var(--hue) 27% 15%);
+}
+
+
+/* supporter */
+
+.tetra_modal:has(.supporter_badge) {
+  --hue: 8deg;
+}
+
+/* bot/verified */
+
+.tetra_modal:has(img[src^="/res/verified"]),
+.tetra_modal:has(.tetra_modal_warning > h1):not(.banned)
+
+/* mod */
+
+.tetra_modal:has(img[src="/res/verified-mod.png"]) {}
+
+/* admin */
+
+.tetra_modal:has(img[src="/res/verified-mod.png"]) {}
+
+/* me */
+
+
+
+.tetra_modal > h1,
+.tetra_modal > h2,
+.tetra_modal > h3,
+.tetra_modal_close:hover,
+.tetra_topbutton,
+.tetra_modal_jump {
+  color: hsl(var(--hue) 45% 75%);
+}
+
+.tetra_modal_jump {
+  background-color: hsl(var(--hue) 27% 17%);
+}
+
+.tetra_modal_jump:hover {
+  background-color: hsl(var(--hue) 26% 15%);
+}
+
+.tetra_modal > h2 img:not(.flag),
+.tetra_modal > h3 img,
+.tetra_modal_banner_sep {
+  filter: brightness(var(--bd)) hue-rotate(calc(var(--hue) - 122deg));
+}
+
+.tetra_modal_close {
+  color: hsl(var(--hue) 27% 37%);
+}
+
+.tetra_topbutton:hover,
+.tetra_topbutton.tb_friendbutton:hover,
+.tetra_topbutton.tb_unfriendbutton {
+  background-color: hsl(var(--hue) 26% 40%);
+}
+
+.tetra_topbutton img {
+  filter: grayscale(0) brightness(1) hue-rotate(calc(var(--hue) - 122deg));
+}
+
+.tetra_modal_banner_sep::before {
+  background: linear-gradient(to bottom, #0000 0, hsl(var(--hue) 23% 31%) 100%);
+}
+
+.tetra_tag_record,
+.tetra_tag_gametime span,
+.tetra_modal_record > h6 {
+  color: hsl(var(--hue) 27% 28%);
+}
+
+.tetra_tag_record span,
+.tetra_tag_gametime,
+.tetra_modal_record > h5,
+.tetra_modal_record > h3 > span,
+.tetra_modal_warning {
+  color: hsl(var(--hue) 75% 83%);
+}
+
+.tetra_modal_record > h5 {
+  text-shadow: 0 2px hsl(var(--hue) 30% 66%), 0 0 16px #fff4;
+}
+
+.tetra_modal_record > h3 {
+  color: hsl(var(--hue) 21% 51%);
+  border-top: 1px solid hsl(var(--hue) 27% 28%);
+}
+
+.standingset div h1,
+.standingset div p span {
+  color: hsl(var(--hue) 21% 43%);
+}
+
+.standingset div p {
+  color: hsl(var(--hue) 83% 93%);
+}
+
+.standingset div:last-child:not(:first-child)::after {
+  background: hsl(var(--hue) 27% 17%);
+}
+
 .tetra_modal:has(.avatar[src^="/user-content/avatars/6031fedbaa921e2fb0c7153b"]) h2::after {
   content: " ";
   height: 30px;

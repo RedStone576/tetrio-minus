@@ -67,8 +67,8 @@
         },
         {
             "name"  : "profile-level",
-            "title" : "colored profile",
-            "info"  : "add colors on the user card and modal based on a user's level",
+            "title" : "colored profile*",
+            "info"  : "add colors on the user card and modal based on a user's level *chromium 106+ required",
             "path"  : ["/css/profile-level-card.css", "/css/profile-level-modal.css"],
             "clash" : "profile-role"
         },
@@ -78,6 +78,12 @@
             "info"  : "add colors on the user card and modal based on a user's role",
             "path"  : ["/css/profile-role-card.css", "/css/profile-role-modal.css"],
             "clash" : "profile-level"
+        },
+        {
+            "name"  : "fancy-file-name",
+            "title" : "!fancy file name",
+            "info"  : "",
+            "path"  : "/js/fancyFileName.js"
         }
     ]
 }

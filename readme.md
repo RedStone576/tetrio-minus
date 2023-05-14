@@ -5,7 +5,7 @@
 ---
 
 [Wiki](https://github.com/RedStone576/tetrio-minus/wiki)  
-[My Discord server](https://discord.gg/C2qHe7F) (or if you're in the Tetrindo Discord server you can just tag me there for stuff)
+[My Discord server](https://discord.gg/C2qHe7F)
 
 ---
 
@@ -26,9 +26,9 @@ https://www.youtube.com/watch?v=kRyw_4LxJh8
 
 ### Some other tetr.​io related stuff that i find it cool
 
+- [RedStone576/crimson.js](https://github.com/RedStone576/crimson.js)  
 - [RedStone576/img2tetr](https://github.com/RedStone576/img2tetr)  
 - [RedStone576/tetrlink](https://github.com/RedStone576/tetrlink)  
-- [Sup3rFire/TETR.IO-Logs](https://github.com/Sup3rFire/TETR.IO-Logs)  
 - [ZudoB/emotes-extension](https://github.com/ZudoB/emotes-extension)  
 - [Trisnox/tetrio-connected-skin-generator](https://github.com/Trisnox/tetrio-connected-skin-generator)  
 
@@ -36,4 +36,4 @@ https://www.youtube.com/watch?v=kRyw_4LxJh8
 
 - [osk](https://osk.sh) for creating tetr.​io !!
 - [UniQMG](https://gitlab.com/UniQMG) for creating the original [tetr.​io plus](https://gitlab.com/UniQMG/tetrio-plus)
-- [flaze07](https://github.com/Flaze07) for the extension idea (but sadly he was too busy to do it himself)
+- [flaze07](https://github.com/Flaze07)

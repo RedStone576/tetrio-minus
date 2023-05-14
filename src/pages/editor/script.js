@@ -139,7 +139,7 @@ function init()
         const element = $(`#column-${y}-${x}`)
         
         element.className = ""
-        element.classList.add(`tile-${mapArray[y][x].toLowerCase().replace("d", "@").replace("g", "#").replace("e", "_")}`)
+        element.classList.add(`tile-${mapArray[y][x].toLowerCase().replace("@", "d").replace("#", "g").replace("_", "e")}`)
       }
     }
   })
