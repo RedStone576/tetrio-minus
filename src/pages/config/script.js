@@ -1,3 +1,5 @@
+// i want to implement dropzone but later so imma comment this so i dont forgor
+
 const $ = (x) => document.getElementById(x)
 
 const template = (x, y, z) =>

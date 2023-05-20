@@ -1,11 +1,11 @@
 # teto minus
 
-![logo](https://user-images.githubusercontent.com/44940224/199835657-a537f7dc-07b0-4089-ada0-029e3a05ad22.png)
+![logo](https://cdn.discordapp.com/attachments/737992663743070278/1109433695460413560/199835657-a537f7dc-07b0-4089-ada0-029e3a05ad22.png)
 
 ---
 
-[Wiki](https://github.com/RedStone576/tetrio-minus/wiki)  
 [My Discord server](https://discord.gg/C2qHe7F)
+[Wiki](https://github.com/RedStone576/tetrio-minus/wiki)  
 
 ---
 
@@ -36,4 +36,3 @@ https://www.youtube.com/watch?v=kRyw_4LxJh8
 
 - [osk](https://osk.sh) for creating tetr.​io !!
 - [UniQMG](https://gitlab.com/UniQMG) for creating the original [tetr.​io plus](https://gitlab.com/UniQMG/tetrio-plus)
-- [flaze07](https://github.com/Flaze07)

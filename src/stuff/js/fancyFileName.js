@@ -1,5 +1,5 @@
 {
-  // not done but i want to push lol
+  // probably easier by just modifying tetrio.js lol
 
   let interval = setInterval(() => 
   {
@@ -13,15 +13,41 @@
       {
         const _appendChild = document.body.appendChild // save the original refrence
 
-        // begin hijack the function
+        // hijack the function
         document.body.appendChild = (x) =>
         {
           document.body.appendChild = _appendChild // make sure to only do it for this certain element
-          console.log(x)
+          //console.log(x)
 
           const info = getSingleReplay(x.download)
           
-          x.download = `${info.date}_${info.player}_${info.gamemode}_${info.score}.${info.type}`
+          //x.download = `${info.date}_${info.player}_${info.gamemode}_${info.score}.${info.type}`
+          x.download = `${info.player} (${info.gamemode}) ${info.score}${info.gamemode === "custom" ? (" " + info.date) : ""}.${info.type}`
+          return _appendChild.call(document.body, x)
+        }
+      })
+    }
+  }, 1000)
+
+  let interval2 = setInterval(() => 
+  {
+    let element = document.getElementById("downloadreplay_multilog")
+  
+    if (!!element)
+    {
+      clearInterval(interval2)
+
+      element.addEventListener("click", (e) =>
+      {
+        const _appendChild = document.body.appendChild
+        
+        document.body.appendChild = (x) =>
+        {
+          document.body.appendChild = _appendChild
+
+          const info = getMultiReplay()
+
+          x.download = `${info.player} (${info.player_score}) vs (${info.opponent_score}) ${info.opponent}.ttrm`
           return _appendChild.call(document.body, x)
         }
       })
@@ -29,7 +55,7 @@
   }, 1000)
 
   const singleGamemodes = {
-    "40": "40l",
+    "40": "sprint",
     "BLITZ": "blitz",
     "CUSTOM": "custom"
   }
@@ -60,11 +86,15 @@
   {
     // 14-05-23_redstone576_vs_redstone576_0-7.ttrm
     // redstone576_(7)_vs_(0)_redstone576.ttrm
+
+    // havent try this on tl end screen 
+    const gamemode       = "" // tl | custom
+    const player         = document.querySelectorAll(".leagueplayer_name")[0].textContent.toLowerCase()
+    const player_score   = document.querySelectorAll(".leagueplayer_count")[0].textContent
+    const opponent       = document.querySelectorAll(".leagueplayer_name")[1].textContent.toLowerCase()
+    const opponent_score = document.querySelectorAll(".leagueplayer_count")[1].textContent
+    const date           = document.getElementById("footer_text").textContent.split("played on ")[1].split(" ")[0].replace(",", "").replaceAll("/", "-")
   
-    const gamemode = "" // tl | custom
-    const player   = ""
-    const opponent = ""
-    const score    = `` // num-num 
-    const date     = ""
+    return { gamemode, player, player_score, opponent, opponent_score, date }
   }
 }

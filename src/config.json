@@ -81,9 +81,15 @@
         },
         {
             "name"  : "fancy-file-name",
-            "title" : "!fancy file name",
-            "info"  : "",
+            "title" : "fancy file name*",
+            "info"  : "add some info into replay file name *probably fragile",
             "path"  : "/js/fancyFileName.js"
+        },
+        {
+            "name"  : "logger",
+            "title" : "logger",
+            "info"  : "logs ribbon events and api calls, useful for bot dev or if you just want to mess around",
+            "path"  : "/js/logger.js"
         }
     ]
 }
